@@ -9,7 +9,7 @@ const port = process.env.PORT || 9000;
 
 connectDB();
 
-app.use(cors({ origin: ["http://localhost:5173", "http://localhost:5174"], credentials: true }));
+app.use(cors({ origin: ["http://localhost:5173", "http://localhost:5174", "https://workify-5pc2.vercel.app"], credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
