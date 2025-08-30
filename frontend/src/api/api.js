@@ -3,7 +3,7 @@ import axios from "axios";
 const getToken = () =>
   localStorage.getItem("accessToken");
 
-const api = axios.create({ baseURL: "http://localhost:9000" });
+const api = axios.create({ baseURL: "https://workify-pearl.vercel.app" });
 
 api.interceptors.request.use((config) => {
   const token = getToken();
