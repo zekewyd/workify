@@ -1,0 +1,481 @@
+.hr-dashboard-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9fafb;
+  color: #1e293b;
+}
+
+.hr-dashboard-stats-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hr-stat-card {
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 100px;
+  height: 60%;
+  flex: 1;
+  color: white;
+  cursor: default;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  top: 0;
+}
+
+.hr-stat-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  animation: float-gentle 3s ease-in-out infinite;
+}
+
+@keyframes float-gentle {
+  0% {
+    transform: translateY(-6px) scale(1.01);
+  }
+  50% {
+    transform: translateY(-9px) scale(1.01);
+  }
+  100% {
+    transform: translateY(-6px) scale(1.01);
+  }
+}
+
+.stat-card-remainingTask {
+  background: linear-gradient(135deg, #ec5300 0%, #fc9643 100%);
+}
+
+.stat-card-completedTask {
+  background: linear-gradient(135deg, #ff8127 0%, #fdba74 100%);
+}
+.stat-card-totalEmployees {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+.stat-card-pendingTasks {
+  background-color: #fef9f4;
+  color: #1e293b;
+}
+
+.hr-stat-header h3 {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.hr-stat-main {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.hr-stat-icon {
+  font-size: 30px;
+}
+
+.hr-stat-subtext {
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.hr-stat-subtext-small {
+  font-weight: 300;
+  font-size: 10px;
+  max-width: 180px;
+  line-height: 1;
+}
+
+.hr-stat-link {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+  padding-top: 8px;
+}
+
+.hr-stat-link-pending {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #1e293b;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hr-semi-circle-progress-container {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.hr-progress-bg-semi {
+  stroke: #f3f3f3;
+}
+
+.hr-progress-bar-semi {
+  stroke: #ff5003;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.hr-progress-text-semi {
+  font-size: 15px;
+  fill: #1e293b;
+  font-weight: 700;
+}
+
+/* Charts and Tables Layout */
+.hr-charts-tables-row {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.hr-pie-chart-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  flex: 1;
+}
+
+.hr-tasks-table-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  flex: 1;
+}
+
+.hr-pie-chart-title,
+.hr-tasks-table-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Enhanced Tasks Table Styles */
+.hr-tasks-table {
+  overflow-x: auto;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.hr-tasks-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}
+
+.hr-tasks-table th {
+  background: #003f7d;
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  color: white;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.hr-tasks-table th:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.hr-tasks-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f3f4;
+  color: #2d3748;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.hr-tasks-table tr {
+  transition: all 0.2s ease;
+}
+
+.hr-tasks-table tr:not(:last-child) td {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.hr-tasks-table tr:hover {
+  background: linear-gradient(90deg, #f7fafc 0%, #edf2f7 100%);
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.hr-tasks-table tr:hover td {
+  background: transparent;
+}
+
+/* Urgency-based styling for due dates */
+.task-due-date {
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  display: inline-block;
+  min-width: 80px;
+  text-align: center;
+}
+
+.due-date-urgent {
+  background: linear-gradient(135deg, #ff5003);
+  color: white;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+.due-date-soon {
+  background: linear-gradient(135deg, #fd7702);
+  color: white;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+.due-date-future {
+  background: linear-gradient(135deg, #fc9942);
+  color: white;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+.due-date-completed {
+  background: linear-gradient(135deg, #09cc09);
+  color: white;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+/* Task name styling */
+.task-name {
+  font-weight: 600;
+  color: #2d3748;
+  position: relative;
+}
+
+.task-name::before {
+  content: '•';
+  color: #667eea;
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+/* Assigned to styling */
+.task-assigned {
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.task-assigned::before {
+  margin-right: 4px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hr-tasks-table {
+    margin: 0 -1rem;
+    border-radius: 0;
+  }
+  
+  .hr-tasks-table th,
+  .hr-tasks-table td {
+    padding: 12px 8px;
+    font-size: 0.85rem;
+  }
+  
+  .task-due-date {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    min-width: 70px;
+  }
+}
+
+/* Animation for new tasks */
+@keyframes taskHighlight {
+  0% {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transform: scale(1.02);
+  }
+  100% {
+    background: transparent;
+    transform: scale(1);
+  }
+}
+
+.new-task-highlight {
+  animation: taskHighlight 1s ease-in-out;
+}
+
+/* New Hired Employees Table Styles */
+.hr-new-hires-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+}
+
+.hr-new-hires-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.hr-new-hires-table {
+  overflow-x: auto;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.hr-new-hires-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}
+
+.hr-new-hires-table th {
+  background: #003f7d;
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  color: white;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.hr-new-hires-table th:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.hr-new-hires-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f3f4;
+  color: #2d3748;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.hr-new-hires-table tr {
+  transition: all 0.2s ease;
+}
+
+.hr-new-hires-table tr:not(:last-child) td {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.hr-new-hires-table tr:hover {
+  background: linear-gradient(90deg, #f7fafc 0%, #edf2f7 100%);
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.hr-new-hires-table tr:hover td {
+  background: transparent;
+}
+
+/* Employee name styling */
+.employee-name {
+  font-weight: 600;
+  color: #2d3748;
+  position: relative;
+}
+
+.employee-name::before {
+  margin-right: 8px;
+  font-size: 1rem;
+}
+
+/* Department styling */
+.employee-department {
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.employee-department::before {
+  margin-right: 4px;
+}
+
+/* Job title styling */
+.employee-job-title {
+  color: #4a5568;
+  font-style: italic;
+}
+
+.employee-job-title::before {
+  margin-right: 4px;
+}
+
+/* Hired date styling */
+.employee-hired-date {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.employee-hired-date::before{
+  margin-right: 4px;
+}
+
+/* Responsive design for new hires table */
+@media (max-width: 768px) {
+  .hr-new-hires-table {
+    margin: 0 -1rem;
+    border-radius: 0;
+  }
+  
+  .hr-new-hires-table th,
+  .hr-new-hires-table td {
+    padding: 12px 8px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Empty state styling */
+.tasks-empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #a0aec0;
+}
+
+.tasks-empty-state i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+  opacity: 0.5;
+}
+
+.tasks-empty-state h4 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #718096;
+}
+
+.tasks-empty-state p {
+  font-size: 0.9rem;
+}

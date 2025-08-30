@@ -1,0 +1,82 @@
+/* DashboardLayout Styles */
+
+.dashboard-layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9fafb;
+  overflow: hidden;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  flex: 1;
+  min-height: 0;
+}
+
+.sidebar-container {
+  grid-column: span 2;
+  overflow: hidden;
+}
+
+.main-content-container {
+  grid-column: span 10;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .sidebar-container {
+    grid-column: span 12;
+  }
+  
+  .main-content-container {
+    grid-column: span 12;
+  }
+}
+
+/* Header Styles */
+.dashboard-header {
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.header-content {
+  padding: 1rem 1.5rem;
+}
+
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-title-section h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0.75rem 1rem;
+  }
+  
+  .header-title-section h1 {
+    font-size: 1.25rem;
+  }
+}

@@ -1,0 +1,532 @@
+.progress-container {
+  padding: 1.5rem 0;
+  background-color: #f9fafb;
+  max-height: 100%;
+}
+
+@media (min-width: 768px) {
+  .progress-container {
+    padding: 1.8rem 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.progress-title {
+  font-size: 1.875rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .progress-title {
+    margin-bottom: 2rem;
+  }
+}
+
+.progress-table-container {
+  overflow-x: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  background: white;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .progress-table-container {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+.progress-controls-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+  .progress-controls-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.progress-search-container {
+  flex: 1;
+  min-width: 200px;
+}
+
+.progress-search-input {
+  width: 100%;
+  height: 45px;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  color: #000000;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.progress-search-input:focus {
+  outline: none;
+  border: 2px solid;
+  border-color: #ff5003;
+  box-shadow: 0 8px 20px rgba(255, 80, 3, 0.15);
+}
+
+.progress-filter-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.progress-filter-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #002347;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+}
+
+.progress-filter-button:hover {
+  background-color: #f3f4f6;
+  color: #003f7d;
+}
+
+.progress-filter-button.active {
+  color: #ff5003;
+  background-color: #fff7ed;
+}
+
+.progress-filter-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  z-index: 50;
+  min-width: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.progress-filter-dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.progress-clear-filter-btn {
+  background: none;
+  border: none;
+  color: #ff5003;
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.progress-clear-filter-btn:hover {
+  background-color: #fff7ed;
+}
+
+.progress-filter-options {
+  padding: 0.5rem 0;
+}
+
+.progress-filter-option {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.progress-filter-option:hover {
+  background-color: #f9fafb;
+}
+
+.progress-filter-option.active {
+  background-color: #fff7ed;
+  color: #ff5003;
+  font-weight: 500;
+}
+
+@media (max-width: 767px) {
+  .progress-filter-container {
+    align-self: flex-end;
+  }
+}
+
+.progress-table {
+  min-width: 100%;
+  table-layout: auto;
+  overflow: hidden;
+}
+.table-header {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.table-header-cell {
+  padding: 0.75rem 1.5rem;
+  text-align: left;
+}
+
+.table-row {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.table-row:hover {
+  background-color: #fd7702 !important;
+  color: #ffffff !important;
+}
+
+
+.rdt_TableRow:hover {
+  background-color: #fd7702 !important;
+  color: #ffffff !important;
+}
+
+.rdt_TableRow:hover .rdt_TableCell {
+  color: #ffffff !important;
+}
+
+div[data-testid="table-row"]:hover {
+  background-color: #fd7702 !important;
+  color: #ffffff !important;
+}
+
+div[data-testid="table-row"]:hover > div {
+  color: #ffffff !important;
+}
+
+.table-cell {
+  padding: 0.75rem 1.5rem;
+}
+
+
+.status-completed,
+.status-in-progress,
+.status-on-progress,
+.status-pending {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-width: 110px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.status-completed:hover,
+.status-in-progress:hover,
+.status-on-progress:hover,
+.status-pending:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.status-completed {
+  background-color: #dcfce7 !important;
+  color: #166534 !important;
+}
+
+.status-in-progress {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+}
+
+.status-on-progress {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+}
+
+.status-pending {
+  background-color: #dbeafe !important;
+  color: #1e40af !important;
+}
+
+
+.table-row:hover .worksheet-completed,
+.table-row:hover .worksheet-in-progress,
+.table-row:hover .worksheet-on-progress {
+  color: inherit !important;
+  background-color: inherit !important;
+}
+
+.rdt_TableRow:hover .worksheet-completed,
+.rdt_TableRow:hover .worksheet-in-progress,
+.rdt_TableRow:hover .worksheet-on-progress {
+  color: inherit !important;
+  background-color: inherit !important;
+}
+
+.pagination-container {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.pagination-button:disabled {
+  background-color: #d1d5db;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.pagination-button:not(:disabled) {
+  background-color: var(--primary-color, #3b82f6);
+  color: white;
+}
+
+.pagination-button:not(:disabled):hover {
+  background-color: #1e40af;
+}
+
+.pagination-info {
+  font-size: 0.875rem;
+}
+
+.progress-log-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+}
+
+.progress-log-modal {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  width: 450px;
+  max-width: 90%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  z-index: 10000;
+  position: relative;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.progress-log-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #002347;
+  color: white;
+}
+
+.progress-log-modal h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+
+.progress-log-close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.progress-log-close-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.progress-log-form {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.progress-log-modal > div {
+  margin-bottom: 16px;
+}
+
+.progress-log-modal label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.progress-log-modal input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #1f2937;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.progress-log-modal input:focus {
+  outline: none;
+  border-color: #002347;
+  box-shadow: 0 0 0 3px rgba(0, 35, 71, 0.1);
+}
+
+.progress-log-modal input::placeholder {
+  color: #9ca3af;
+}
+
+.progress-log-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.progress-log-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 80px;
+}
+
+.progress-log-actions button:first-child {
+  background-color: #002347;
+  color: white;
+}
+
+.progress-log-actions button:first-child:hover {
+  background-color: #003a66;
+}
+
+.progress-log-actions button:first-child:active {
+  transform: translateY(1px);
+}
+
+.progress-log-actions button:last-child {
+  background-color: #6c757d;
+  color: white;
+}
+
+.progress-log-actions button:last-child:hover {
+  background-color: #5a6268;
+}
+
+@media (max-width: 768px) {
+  .progress-log-modal {
+    max-width: 100%;
+    max-height: 95vh;
+  }
+  
+  .progress-log-form {
+    padding: 16px;
+  }
+  
+  .progress-log-actions {
+    flex-direction: column;
+    padding: 16px;
+  }
+  
+  .progress-log-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .progress-log-modal-header {
+    padding: 16px 20px;
+  }
+  
+  .progress-log-modal h3 {
+    font-size: 18px;
+  }
+  
+  .progress-log-modal label {
+    font-size: 11px;
+  }
+  
+  .progress-log-modal input {
+    font-size: 13px;
+  }
+}
+
+.progress-log-form::-webkit-scrollbar {
+  width: 6px;
+}
+
+.progress-log-form::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.progress-log-form::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.progress-log-form::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}

@@ -1,0 +1,94 @@
+.bottom-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .bottom-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card-white {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.status-card {
+  text-align: center;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.status-card:nth-child(1) {
+  background-color: rgba(0, 35, 71, 0.9);
+  color: white;
+}
+
+.status-card:nth-child(2) {
+  background-color: rgba(255, 80, 3, 0.9);
+  color: white;
+}
+
+.status-card:nth-child(3) {
+  background-color: rgba(75, 85, 99, 0.9);
+  color: white;
+}
+
+.status-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+}
+
+.status-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 0 auto 0.75rem;
+  color: white;
+}
+
+.status-value {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.status-description {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Break Card Specific Styles */
+.break-card {
+  padding-bottom: 2.5rem;
+}
+
+.break-button {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.break-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateX(-50%) translateY(-1px);
+}

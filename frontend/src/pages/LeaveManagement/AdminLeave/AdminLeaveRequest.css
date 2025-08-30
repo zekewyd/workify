@@ -1,0 +1,234 @@
+
+.admin-leave-request {
+  width: 100%;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.search-section {
+  background-color: white;
+  padding: 30px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.filter-row {
+  margin-bottom: 25px;
+}
+
+.date-group {
+  display: flex;
+  gap: 30px;
+  align-items: end;
+}
+
+.date-field, .employee-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.date-field label, .employee-field label {
+  color: #000000;
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.date-field input, .employee-field input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+}
+
+.dropdown-group {
+  display: flex;
+  gap: 30px;
+  align-items: end;
+}
+
+.dropdown-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.dropdown-field label {
+  color: #000000;
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.dropdown-field select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  justify-content: flex-end;
+}
+
+.reset-btn {
+  background-color: #002347;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.search-btn {
+  background-color: #FF5003;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.table-section {
+  margin: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.leave-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.leave-table thead th {
+  background-color: #002347;
+  color: white;
+  padding: 15px 12px;
+  text-align: left;
+  font-weight: 500;
+  border-bottom: none;
+}
+
+.leave-table tbody td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #eee;
+  color: #000000;
+  vertical-align: middle;
+}
+
+.leave-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-scheduled {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.status-taken {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.status-cancelled {
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+
+.status-approved {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.action-select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: white;
+  min-width: 120px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+  color: #666;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.pagination-controls button {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.pagination-controls button:hover {
+  background-color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+  .date-group, .dropdown-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .leave-table {
+    font-size: 12px;
+  }
+  
+  .leave-table thead th,
+  .leave-table tbody td {
+    padding: 10px 8px;
+  }
+  
+  .action-select {
+    min-width: 100px;
+  }
+}

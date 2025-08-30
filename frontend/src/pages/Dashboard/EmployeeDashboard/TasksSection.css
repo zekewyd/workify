@@ -1,0 +1,115 @@
+
+.card-white {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+
+.tasks-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.task-item {
+  background-color: #fefce8;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #fef3c7;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.task-title {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #713f12;
+}
+
+.task-date {
+  font-size: 0.75rem;
+  color: #a16207;
+  margin-bottom: 0.5rem;
+}
+
+.task-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.progress-bar {
+  background-color: #fef3c7;
+  border-radius: 9999px;
+  height: 0.5rem;
+  flex: 1;
+}
+
+.progress-fill {
+  background-color: #f59e0b;
+  height: 0.5rem;
+  border-radius: 9999px;
+}
+
+.progress-status {
+  color: #d97706;
+}
+
+
+.schedule-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.schedule-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #94a3b8;
+  border-radius: 50%;
+}
+
+.schedule-content {
+  flex: 1;
+}
+
+.schedule-item-title {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.schedule-time {
+  color: #64748b;
+  font-size: 0.75rem;
+}

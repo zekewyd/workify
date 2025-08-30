@@ -1,0 +1,231 @@
+/* Modal Overlay */
+.submit-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+/* Modal Container */
+.submit-modal-container {
+  background: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Modal Header */
+.submit-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #002347;
+  color: white;
+}
+
+.submit-modal-header h2 {
+  margin: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.submit-close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.submit-close-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Modal Content */
+.submit-modal-content {
+  padding: 0 24px;
+  margin-bottom: 24px;
+}
+
+.empInquiry-form-group {
+  margin-bottom: 20px;
+}
+
+.empInquiry-form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #666;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.empInquiry-form-group input,
+.empInquiry-form-group select,
+.empInquiry-form-group textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.2s;
+  background-color: #f8f9fa;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.empInquiry-form-group input:focus,
+.empInquiry-form-group select:focus,
+.empInquiry-form-group textarea:focus {
+  outline: none;
+  border-color: #002347;
+  box-shadow: 0 0 0 3px rgba(0, 35, 71, 0.1);
+  background-color: white;
+}
+
+.empInquiry-form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Modal Actions */
+.submit-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 32px;
+  padding: 20px 24px;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f8f9fa;
+}
+
+.submit-cancel-button,
+.submit-confirm-button {
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.submit-cancel-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+.submit-cancel-button:hover {
+  background-color: #5a6268;
+}
+
+.submit-confirm-button {
+  background-color: #002347;
+  color: white;
+}
+
+.submit-confirm-button:hover {
+  background-color: #003a66;
+}
+
+.submit-confirm-button:active {
+  transform: translateY(1px);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .submit-modal-container {
+    width: 95%;
+    margin: 16px;
+  }
+  
+  .submit-modal-header {
+    padding: 16px 16px 0;
+  }
+  
+  .submit-modal-content {
+    padding: 0 16px;
+  }
+  
+  .submit-modal-actions {
+    padding: 0 16px 16px;
+    flex-direction: column;
+  }
+  
+  .submit-cancel-button,
+  .submit-confirm-button {
+    width: 100%;
+  }
+}
+
+/* Scrollbar Styles */
+.submit-modal-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.submit-modal-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.submit-modal-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.submit-modal-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Form Validation */
+.form-group input:invalid:focus,
+.form-group select:invalid:focus,
+.form-group textarea:invalid:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.empInquiry-form-group label::after {
+  content: ' *';
+  color: #ef4444;
+  font-weight: normal;
+}
+
+.empInquiry-form-group label[for="description"]::after,
+.empInquiry-form-group label[for="assignedBy"]::after,
+.empInquiry-form-group label[for="department"]::after {
+  content: '';
+}

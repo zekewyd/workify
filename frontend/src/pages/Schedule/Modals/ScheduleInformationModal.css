@@ -1,0 +1,441 @@
+.addSchedule-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.addSchedule-modal-container {
+  background: white;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.addSchedule-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #002347;
+  color: white;
+}
+
+.addSchedule-modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.addSchedule-close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.addSchedule-close-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.addSchedule-steps-indicator {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 25px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e5e5e5;
+
+}
+
+.addSchedule-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px; /* Adjusted margin for even spacing */
+  color: #666;
+  position: relative;
+  width: 100px;
+}
+
+.addSchedule-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+  color: #666;
+  position: relative;
+}
+
+.addSchedule-step.active {
+  color: #002347;
+}
+
+.addSchedule-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  right: -100px;
+  width: 140px;
+  height: 2px;
+  background-color: #ddd;
+}
+
+.addSchedule-step.active:not(:last-child)::after {
+  background-color: #002347;
+}
+
+.addSchedule-step-number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ddd;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.addSchedule-step.active
+.addSchedule-step-number {
+  background-color: #002347;
+}
+
+.addSchedule-step-label {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.addSchedule-modal-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.addSchedule-step-content h3 {
+  margin: 0 0 20px 0;
+  color: #002347;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.addSchedule-form-group {
+  margin-bottom: 20px;
+}
+
+.addSchedule-form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+}
+
+.addSchedule-form-group input,
+.addSchedule-form-group textarea,
+.addSchedule-form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  background-color: white;
+  color: black;
+}
+
+.addSchedule-form-group input:focus,
+.addSchedule-form-group textarea:focus,
+.addSchedule-form-group select:focus {
+  outline: none;
+  border-color: #fd7702;
+  box-shadow: 0 0 0 3px rgba(246, 187, 59, 0.1);
+}
+
+.addSchedule-form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.addSchedule-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.addSchedule-schedule-type-options {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.addSchedule-radio-option {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.addSchedule-radio-option:hover {
+  border-color: #002347;
+}
+
+.addSchedule-radio-option input[type="radio"] {
+  width: auto;
+  margin-right: 8px;
+  margin-bottom: 4px;
+}
+
+.addSchedule-radio-option span {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.addSchedule-radio-option small {
+  color: #666;
+  font-size: 12px;
+}
+
+.addSchedule-work-days {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.addSchedule-day-button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  background-color: white;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.addSchedule-day-button:hover {
+  border-color: #002347;
+}
+
+.addSchedule-day-button.selected {
+  background-color: #002347;
+  border-color: #002347;
+  color: white;
+}
+
+.addSchedule-employees-section {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.addSchedule-search-container {
+  margin-bottom: 16px;
+}
+
+.addSchedule-search-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  background-color: white;
+  color: black;
+}
+
+.addSchedule-search-input:focus {
+  outline: none;
+  border-color: #fd7702;
+  box-shadow: 0 0 0 3px rgba(246, 187, 59, 0.1);
+}
+
+.addSchedule-employees-table-container {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.addSchedule-employees-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.addSchedule-employees-table thead {
+  background-color: #002347;
+  position: sticky;
+  top: 0;
+}
+
+.addSchedule-employees-table thead th {
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  border: none;
+}
+
+.addSchedule-employees-table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.addSchedule-employees-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.addSchedule-employees-table tbody td {
+  padding: 12px;
+  font-size: 12px;
+  color: #333;
+  vertical-align: middle;
+}
+
+.addSchedule-employees-table input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+}
+
+.addSchedule-selected-employees {
+  margin-top: 12px;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.addSchedule-modal-footer {
+  border-top: 1px solid #e5e5e5;
+  padding: 16px 24px;
+  background-color: #f8f9fa;
+}
+
+.addSchedule-footer-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.addSchedule-btn-primary {
+  background-color: #002347;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.addSchedule-btn-primary:hover:not(:disabled) {
+  background-color: #003a66;
+}
+
+.addSchedule-btn-primary:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.addSchedule-btn-secondary {
+  background-color: #FF5003;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.addSchedule-btn-secondary:hover {
+  background-color: #e6460a;
+}
+
+.addSchedule-btn-cancel {
+  background-color: transparent;
+  color: #666;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.addSchedule-btn-cancel:hover {
+  border-color: #999;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .addSchedule-modal-overlay {
+    padding: 10px;
+  }
+  
+  .addSchedule-modal-container {
+    max-width: 100%;
+    max-height: 95vh;
+  }
+  
+  .addSchedule-steps-indicator {
+    padding: 16px 10px;
+  }
+  
+  .addSchedule-step {
+    margin: 0 10px;
+  }
+  
+  .addSchedule-step:not(:last-child)::after {
+    width: 60px;
+  }
+  
+  .addSchedule-step-label {
+    font-size: 10px;
+  }
+  
+  .addSchedule-form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .addSchedule-work-days {
+    justify-content: center;
+  }
+  
+  .addSchedule-footer-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

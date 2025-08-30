@@ -1,0 +1,344 @@
+
+.inquiries-container {
+  padding: 1.5rem 0;
+  background-color: #f9fafb;
+  max-height: 100%;
+}
+
+@media (min-width: 768px) {
+  .inquiries-container {
+    padding: 1.8rem 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.inquiries-table-container {
+  overflow-x: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  background: white;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .inquiries-table-container {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+.inquiries-controls-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+  .inquiries-controls-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.inquiries-search-container {
+  flex: 1;
+  min-width: 200px;
+}
+
+.inquiries-search-input {
+  width: 100%;
+  height: 45px;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  color: #000000;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.inquiries-search-input:focus {
+  outline: none;
+  border: 2px solid;
+  border-color: #ff5003;
+  box-shadow: 0 8px 20px rgba(255, 80, 3, 0.15);
+}
+
+.inquiries-filter-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.inquiries-filter-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #002347;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+}
+
+.inquiries-filter-button:hover {
+  background-color: #f3f4f6;
+  color: #003f7d;
+}
+
+.inquiries-filter-button.active {
+  color: #ff5003;
+  background-color: #fff7ed;
+}
+
+.inquiries-filter-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  z-index: 50;
+  min-width: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.inquiries-filter-dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.inquiries-clear-filter-btn {
+  background: none;
+  border: none;
+  color: #ff5003;
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.inquiries-clear-filter-btn:hover {
+  background-color: #fff7ed;
+}
+
+.inquiries-filter-options {
+  padding: 0.5rem 0;
+}
+
+.inquiries-filter-option {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.inquiries-filter-option:hover {
+  background-color: #f9fafb;
+}
+
+.inquiries-filter-option.active {
+  background-color: #fff7ed;
+  color: #ff5003;
+  font-weight: 500;
+}
+
+/* Responsive adjustments for filter */
+@media (max-width: 767px) {
+  .inquiries-filter-container {
+    align-self: flex-end;
+  }
+}
+
+/* Status Badges */
+.inquiries-status-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-width: 100px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.inquiries-status-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.inquiries-status-badge.pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.inquiries-status-badge.approved {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.inquiries-status-badge.declined {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Action Buttons */
+.approve-button {
+  background-color: #22c55e;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.approve-button:hover {
+  background-color: #16a34a;
+  transform: translateY(-1px);
+}
+
+.approve-button:active {
+  transform: translateY(0);
+}
+
+.decline-button {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.decline-button:hover {
+  background-color: #b91c1c;
+  transform: translateY(-1px);
+}
+
+.decline-button:active {
+  transform: translateY(0);
+}
+
+/* Flex utilities */
+.flex {
+  display: flex;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.completed {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .inquiries-container {
+    padding: 16px;
+  }
+  
+  .inquiries-table-container {
+    padding: 16px;
+  }
+}
+
+/* Data Table Custom Styles */
+.rdt_TableHeadRow {
+  background-color: #003f7d !important;
+}
+
+.rdt_TableHeadRow .rdt_TableCol {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.rdt_TableRow {
+  transition: background-color 0.2s;
+}
+
+.rdt_TableRow:hover {
+  background-color: #fd7702 !important;
+}
+
+.rdt_TableRow:hover .rdt_TableCell {
+  color: #ffffff !important;
+}
+
+div[data-testid="table-row"]:hover {
+  background-color: #fd7702 !important;
+  color: #ffffff !important;
+}
+
+div[data-testid="table-row"]:hover > div {
+  color: #ffffff !important;
+}
+
+/* Loading and Error States */
+.inquiries-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.inquiries-error {
+  background-color: #fee;
+  color: #c53030;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #fc8181;
+  margin-bottom: 24px;
+}
+
+.inquiries-error button {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 12px;
+}
+
+.inquiries-error button:hover {
+  background-color: #b91c1c;
+}
